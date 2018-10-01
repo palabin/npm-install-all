@@ -21,7 +21,7 @@ function storingModuleNames(fn){
       var regex = /require\(([^.\/)]+)\)/g;
       var mat = regex.exec(line);
       if(mat != null){
-        mat[1] = mat[1].replace(/'/g, '');
+        mat[1] = mat[1].replace(/["']/g, '');
         if (moduleArr.indexOf(mat[1]) == -1) {
           moduleArr.push(mat[1]);
         }
